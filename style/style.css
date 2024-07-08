@@ -1,0 +1,371 @@
+/*Réglages généraux */
+@font-face {
+    font-family: "bratsy";
+    src: url('./bratsy.ttf');
+}
+
+@font-face {
+    font-family: 'custom';
+    src: url('./caviar.ttf');
+}
+
+* {
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+    --color-pal-1: #42526F ;
+    --color-pal-2: #6E879E;
+    --color-pal-3: #9EB6D0;
+    /*--color-pal-4: #F1F1F1;*/
+    --color-light-default : #D9E8F7;
+    --color-dark-default : #2A2D34;
+    --color-transparent : #ffffff48;
+
+}
+
+body {
+    font-family: 'custom', sans-serif;
+    background-color: var(--color-light-default);
+    color : var(--color-dark-default);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-pal-2);
+    text-shadow: 1px 1px 2px var(--color-dark-default);
+}
+
+h1 {
+    font-size: 2.5rem;   
+}
+
+h2 {
+    font-size: 2rem;   
+}
+
+h3 {
+    font-size: 1.75rem;   
+}
+
+h4 {
+    font-size: 1.5rem;   
+}
+
+h5 {
+    font-size: 1.25rem;   
+}
+
+h6 {
+    font-size: 1rem;   
+}
+
+/*header*/
+
+header {
+    position: fixed;
+    z-index: 10;
+    background-color: var(--color-light-default);
+}
+
+#header-haut {
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;    
+    color : var(--color-pal-1);
+    margin : 0px;
+    padding :15px;
+    width : 100vw;
+    height: 23vh;
+}
+
+#header-logo {
+    width : 20vw;
+    display : flex;
+    flex-direction:column ;
+    justify-content : center ;
+    align-items: center ;
+}
+
+#header-titre {
+    width : 55vw;
+    display : flex;
+    flex-direction:column ;
+    justify-content : center ;
+    align-items: center ;
+}
+
+#header-login {
+    width : 25vw;
+    border: var(--color-pal-1)solid 3px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--color-pal-3);
+    color : var(--color-pal-1);
+} 
+
+#logo {    
+    height : 16vh;
+    display : block;
+}
+
+/* Barre sous le header avec image de fond*/
+#header-bas {
+    width : 100vw;
+    height:10vh;    
+    background-image:url('../assets/books.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center;
+    background-position-y:center;    
+    border-bottom: var(--color-pal-1) solid 3px;
+
+}
+
+#burger-button {
+    position : relative;
+    top : 3vh;
+    height: 60%;
+    border: var(--color-light-default) solid 2px;
+    margin-left: 3vw;
+    aspect-ratio: 1;
+    background-color: var(--color-pal-2);
+    cursor: pointer;
+}
+/*mise en forme de formulaire*/
+
+input, label {
+    display : block;
+    margin-top: 3px;
+    width : 100%;
+    
+}
+
+/*partie centrale */
+#central {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+}
+/*menu*/
+
+nav {
+    position: fixed;
+    /*top:33vh;*/
+    top : -30vh;
+    width : 20vw;
+    height: 60vh;
+    background-color: var(--color-pal-2);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 2px 2px 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 5;
+    transition: top 1200ms;
+}
+
+.bouton {
+    text-decoration: none;
+    color: var(--color-pal-1);
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    display : block;
+    padding: 15px;
+    background-color: var(--color-pal-3);
+    width : 80%;
+    border-radius: 20px;
+    box-shadow: var(--color-dark-default) 2px 2px 10px 0;
+    
+    transition: box-shadow 300ms, color 1500ms, background-color 300ms;
+
+}
+
+.bouton:hover {
+    box-shadow:none ;
+    color: var(--color-pal-3);
+    background-color: var(--color-pal-1);
+    
+}
+
+/*la partie centrale*/
+main {
+    position: relative;
+    top : 33vh;
+    
+    width : 100vw;
+    padding : 30px 5vw;
+    display : flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+/*le texte de présentation*/
+article {
+    padding: 20px;
+    background-color: var(--color-transparent);
+    box-shadow: var(--color-dark-default) 5px 5px 10px 0;
+}
+/*
+iframe {
+    width : 60%;
+    aspect-ratio: 16/9;
+    display: block;
+    margin: 20px  auto;
+    
+}*/
+/*le choix de site */
+
+#sites {
+   margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+}
+
+.site {
+    margin: 15px;
+    width : 300px;
+    max-width : 75vw;
+    min-width : 20vw;
+    aspect-ratio : 1/1;
+    border-radius: 10%;
+    box-shadow: var(--color-dark-default) 2px 2px 5px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.nom-site {
+    
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 70%;
+    font-weight: 800;
+    color: var(--color-light-default);
+    -webkit-text-stroke: var(--color-pal-2) 1px;
+    
+    
+}
+
+#arm {
+    background-image: url('../assets/e2cArmMono.png') ;
+}
+
+#lil {
+    background-image: url('../assets/e2cLilleMono.png') ;
+}
+
+#rbx {
+    background-image: url('../assets/e2cRoubaix.png') ;
+}
+
+#sto {
+    background-image: url('../assets/e2cStoMono.png') ;
+}
+
+
+/*la sélection de livre */
+
+
+/* footer */
+
+footer {
+    position: relative;
+    top : 33vh;
+    
+    width : 100vw;
+    background-color: var(--color-dark-default);
+    color: var(--color-light-default);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+footer>div {
+    width: 25%;
+    padding: 10px;
+}
+
+/* la page de jeux */
+
+.select-zone {
+    width : 100%;
+    
+}
+
+
+#game-select {
+    width : 80%;
+    margin : 15px 0;
+}
+
+.apparence-zone {
+    padding: 20px;
+    background-color: var(--color-transparent);
+    box-shadow: var(--color-dark-default) 5px 5px 10px 0;
+    margin-bottom: 3vh;
+}
+
+.game-zone {
+    width: 100%;
+}
+
+/* le juste nombre */
+
+.numberZone {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+}
+
+.numberChoice {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.responseLine {
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+/* Mise en page du morpion */
+
+.ttd-zone {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.grid-zone {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    
+}
+
+.square {
+    width : 30%;
+    aspect-ratio: 1;
+    background-color: #ffffff;
+    border: #000000 solid 1px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.square:hover {
+    background-color: #c1c1c1;
+}
